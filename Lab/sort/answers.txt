@@ -1,0 +1,10 @@
+sort1 uses: Bubble Sort
+
+How do you know?:Because, it is the lowest way in both cases (reversed or not).
+sort2 uses: Merge Sort
+
+How do you know?: Because, this is the faster way to sort the .txt file in both way (reversed or not).
+
+sort3 uses: Selection Sort
+
+How do you know?: Because, in the not reversed files, this is the faster way, before Merge.

@@ -1,0 +1,1 @@
+SELECT AVG(energy) AS Evarege_Energy FROM songs;

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // espera carregar a pagina
+            document.addEventListener('DOMContentLoaded', function() {
+                // correct answer
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector("#1feedback").innerHTML = 'Correct!';
+                });
+
+                // incorrects answer
+                let incorrects = document.querySelectorAll('.incorrect');
+                // como tem mais que um, a gente faz um loop por todos
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function() {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#1feedback').innerHTML = 'Incorrect!';
+                    });
+                }
+
+                document.querySelector('#check').addEventListener('click', function () {
+                    let input = document.querySelector('input');
+                    if (input.value === 'Brazilian') {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#2feedback').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        docuement.querySelector('#2feedback').innerHTML = 'Incorrect!';
+                    }
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>Choose a city from Brazil:</h3>
+
+                <button class="incorrect">New York</button>
+                <button class="incorrect">London</button>
+                <button class="incorrect">Buenos Aires</button>
+                <button class="incorrect">Istambul</button>
+                <button class="correct">Salvador</button>
+
+                <p id="1feedback"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What is the nacionalitty of someone who was born in Brazil?</h3>
+
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+
+                <p id="2feedback"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
